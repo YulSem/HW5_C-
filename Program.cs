@@ -21,15 +21,44 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-int [] array= new int [];
-int sum = 0;
-for (int i = 0; i < array.Length; i++)
+// int [] array= new int [10];
+// int sum = 0;
+// for (int i = 0; i < array.Length; i++)
+// {
+//     array[i] = new Random().Next();
+//     System.Console.Write(array[i]+ " ");
+// }
+// for (int i = 1; i < array.Length; i+=2)
+// {
+//     sum+=array[i];
+// }
+// System.Console.WriteLine("Сумма "+ sum);
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
+
+double [] numbers= new double [10];
+for (int i = 0; i < numbers.Length; i++)
 {
-    array[i] = new Random().Next();
-    System.Console.Write(array[i]+ " ");
+    numbers[i] = new Random().NextDouble();
+    System.Console.WriteLine(numbers[i]+ " ");
 }
-for (int i = 1; i < array.Length; i+=2)
+
+double max = numbers[0];
+double min = numbers[0];
+
+for (int i = 0; i < numbers.Length; i++)
 {
-    sum+=array[i];
+    if (numbers[i] > max)
+    {
+        max = numbers[i];
+    }
+    else if (numbers[i] < min)
+    {
+        min = numbers[i];
+    }
 }
-System.Console.WriteLine("Сумма "+ sum);
+Console.WriteLine("Минимальное число "+min);
+Console.WriteLine("Максимальное число "+max);
+Console.WriteLine("Разница между максимальным и минимальным числами: " +(max-min));
+
